@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.art-quantity-picker {
+  border: 2px solid $neutral-150;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  background-color: $neutral-0;
+  .art-quantity-action {
+    cursor: pointer;
+    display: flex;
+    padding: 0.6rem 0.8rem;
+    color: $neutral-400;
+    background-color: transparent;
+    border: none;
+    &:hover {
+      color: $neutral-900;
+    }
+    &:focus {
+      outline: 2px solid $primary-600;
+    }
+  }
+}
+
+.art-quantity-count {
+  padding: 0 0.6rem;
+}
+
+.art-quantity-rounded {
+  border-radius: 0.4rem;
+  .art-quantity-action {
+    border-radius: 0.3rem;
+  }
+}
+.art-quantity-disabled {
+  pointer-events: none;
+  background-color: $neutral-150;
+  color: $neutral-400;
+}

@@ -1,0 +1,113 @@
+@use "../abstracts" as *;
+
+.art-btn {
+  padding: 0.8rem 1rem;
+  background-color: transparent;
+  border: 2px solid $neutral-200;
+  cursor: pointer;
+  display: flex;
+  &:hover {
+    background-color: $neutral-100;
+  }
+  &:focus {
+    outline: 2px solid $primary-700;
+    outline-offset: 2px;
+  }
+  &:disabled {
+    @extend .art-btn-disabled;
+  }
+}
+
+/* shape */
+
+.art-btn-rounded {
+  border-radius: 0.4rem;
+}
+.art-btn-circle {
+  border-radius: 100%;
+}
+/* size */
+.art-btn-lg {
+  padding: 1rem 1.6rem;
+}
+.art-btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+/* helper classes*/
+.art-btn-disabled {
+  border: 2px solid $neutral-200;
+  background-color: $neutral-150;
+  color: $neutral-600;
+  pointer-events: none;
+}
+.art-btn-light-pseudo {
+  &:hover {
+    background-color: $neutral-0;
+  }
+  &:focus {
+    background-color: $neutral-0;
+  }
+  &:disabled {
+    @extend .art-btn-disabled;
+  }
+}
+
+/* variants */
+.art-btn-primary {
+  border: 2px solid $primary-700;
+  background-color: $primary-700;
+  color: $neutral-0;
+  &:hover {
+    background-color: $primary-600;
+  }
+  &:disabled {
+    @extend .art-btn-disabled;
+  }
+}
+
+.art-btn-danger {
+  border: 2px solid $danger-600;
+  background-color: $danger-600;
+  color: $neutral-0;
+  &:hover {
+    background-color: $danger-500;
+  }
+  &:disabled {
+    @extend .art-btn-disabled;
+  }
+}
+
+.art-btn-success {
+  border: 2px solid $success-600;
+  background-color: $success-600;
+  color: $neutral-0;
+  &:hover {
+    background-color: $success-500;
+  }
+  &:disabled {
+    @extend .art-btn-disabled;
+  }
+}
+
+// ==== light variants
+
+.art-btn-primary-light {
+  border: 2px solid $primary-200;
+  background-color: $primary-100;
+  color: $primary-600;
+  @extend .art-btn-light-pseudo;
+}
+
+.art-btn-danger-light {
+  border: 2px solid $danger-200;
+  background-color: $danger-100;
+  color: $danger-600;
+  @extend .art-btn-light-pseudo;
+}
+.art-btn-success-light {
+  border: 2px solid $success-200;
+  background-color: $success-100;
+  color: $success-600;
+  @extend .art-btn-light-pseudo;
+}

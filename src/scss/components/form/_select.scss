@@ -1,0 +1,88 @@
+@use "../../abstracts" as *;
+
+.art-select {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  min-width: 15ch;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0.6em;
+    width: 0.8em;
+    height: 0.5em;
+    background-color: $neutral-400;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+}
+.art-select {
+  select {
+    padding: 0.6em;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    flex: 1;
+    border-radius: 0.4em;
+    border: 1px solid $neutral-150;
+    background-color: $neutral-0;
+
+    &:hover {
+      border: 1px solid $primary-500;
+    }
+    &:focus {
+      border: 1px solid $primary-700;
+      outline: 1px solid $primary-700;
+    }
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
+
+.art-select-error {
+  select {
+    border: 1px solid $danger-600;
+    &:hover {
+      border: 1px solid $danger-600;
+    }
+
+    &:focus-within {
+      border: 1px solid $danger-600;
+      outline: 1px solid $danger-600;
+      box-shadow: 0px 4px 10px $neutral-100;
+    }
+  }
+}
+.art-select-success {
+  select {
+    border: 1px solid $success-600;
+    &:hover {
+      border: 1px solid $success-600;
+    }
+
+    &:focus-within {
+      border: 1px solid $success-600;
+      outline: 1px solid $success-600;
+      box-shadow: 0px 4px 10px $success-100;
+    }
+  }
+}
+
+.art-select-disabled {
+  pointer-events: none;
+  select {
+    background-color: $neutral-150;
+  }
+}

@@ -1,0 +1,15 @@
+@use "../abstracts" as * ;
+
+.art-error-text {
+  color: $danger-500;
+  margin-top: 0.4rem;
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.art-success-text{
+  color: $success-600;
+  margin-top: 0.4rem;
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+}

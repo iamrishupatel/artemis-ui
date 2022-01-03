@@ -1,0 +1,73 @@
+@use "../../abstracts" as *;
+
+.art-textarea-container {
+  display: flex;
+  flex-direction: column;
+  label {
+    color: $neutral-400;
+    font-size: 0.8rem;
+  }
+}
+
+.art-textarea {
+  margin-top: 4px;
+  border: 1px solid $neutral-150;
+  padding: 0.4rem;
+  background-color: $neutral-0;
+  &:hover {
+    border: 1px solid $primary-500;
+  }
+  &:focus {
+    border: 1px solid $primary-700;
+    outline: 1px solid $primary-700;
+    box-shadow: 0px 4px 10px $neutral-100;
+  }
+  &::placeholder {
+    transition: 0.2s;
+  }
+  &:focus {
+    &::placeholder {
+      padding-left: 0.2rem;
+    }
+  }
+}
+.art-textarea-rounded {
+  .art-textarea {
+    border-radius: 0.4rem;
+  }
+}
+
+.art-textarea-error {
+  .art-textarea {
+    border: 1px solid $danger-600;
+    &:hover {
+      border: 1px solid $danger-600;
+    }
+
+    &:focus-within {
+      border: 1px solid $danger-600;
+      outline: 1px solid $danger-600;
+      box-shadow: 0px 4px 10px $neutral-100;
+    }
+  }
+}
+.art-textarea-success {
+  .art-textarea {
+    border: 1px solid $success-600;
+    &:hover {
+      border: 1px solid $success-600;
+    }
+
+    &:focus {
+      border: 1px solid $success-600;
+      outline: 1px solid $success-600;
+      box-shadow: 0px 4px 10px $success-100;
+    }
+  }
+}
+.art-textarea-disabled {
+  pointer-events: none;
+  .art-textarea {
+    background-color: $neutral-150;
+  }
+}

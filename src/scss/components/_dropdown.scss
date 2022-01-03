@@ -1,0 +1,74 @@
+@use "../abstracts" as *;
+
+.art-dropdown-container {
+  width: fit-content;
+}
+.art-dropdown {
+  background-color: $neutral-0;
+  box-shadow: 0px 0px 10px $neutral-200;
+  position: absolute;
+  z-index: 500;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: 0.2s all;
+  min-width: 8rem;
+}
+.art-dropdown-item {
+  padding: 0.4rem 0.6rem;
+  margin: 0 0.4rem;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: $primary-100;
+    color: $primary-700;
+  }
+}
+.art-dropdown-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.art-dropdown.active {
+  max-height: fit-content;
+  overflow-y: visible;
+  padding: 0.4rem 0;
+}
+
+.art-dropdown-container.rounded {
+  @extend .art-dropdown-container;
+  .art-dropdown {
+    border-radius: 0.4rem;
+  }
+  .art-dropdown-item {
+    border-radius: 0.2rem;
+  }
+  .art-sub-dropdown-container {
+    border-radius: 0.2rem;
+  }
+}
+
+// subdropdowns
+.art-sub-dropdown-container {
+  padding: 0.4rem 0.6rem;
+  margin: 0 0.4rem;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: $primary-100;
+  }
+}
+
+.art-sub-dropdown {
+  @extend .art-dropdown;
+  left: 100%;
+  top: 0;
+  width: fit-content;
+}
+
+.art-sub-dropdown.active {
+  max-height: fit-content;
+  overflow-y: visible;
+  padding: 0.4rem 0;
+}

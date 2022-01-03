@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+
+.art-collapse-basic {
+  background-color: $neutral-0;
+  border-bottom: 1px solid $neutral-150;
+}
+.art-collapse-rounded {
+  background-color: $neutral-0;
+  border-radius: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.art-collapse-margin {
+  background-color: $neutral-0;
+  margin-bottom: 0.4rem;
+}
+.art-collapse-border {
+  background-color: $neutral-0;
+  border: 1px solid $neutral-150;
+  margin-top: -1px;
+}
+.art-collapse-border-margin {
+  background-color: $neutral-0;
+  @extend .art-collapse-border;
+  @extend .art-collapse-margin;
+}
+
+.art-collapse-title {
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.art-collapse-content {
+  padding: 0 1rem;
+  transition-duration: 0.2s;
+  transition-property: all;
+  max-height: 0;
+  overflow: hidden;
+}
+.art-collapse-content.active {
+  max-height: fit-content;
+  overflow: visible;
+  padding: 1rem;
+}
+
+.art-collapse-icon {
+  transition: 0.2s all;
+}
+.art-collapse-icon.active {
+  transform: rotateZ(180deg);
+}

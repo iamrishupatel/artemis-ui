@@ -1,0 +1,63 @@
+@use "../abstracts" as *;
+.art-badge {
+  border-radius: 0.4rem;
+  width: fit-content;
+  color: $neutral-0;
+  display: flex;
+  align-items: center;
+  padding: 0.1rem 0.6rem;
+  font-size: 14px;
+  .art-badge-content {
+    margin-left: 4px;
+  }
+}
+
+// ===== size varians ======
+.art-badge-sm {
+  font-size: 12px;
+}
+.art-badge-md {
+  font-size: 14px;
+}
+.art-badge-lg {
+  font-size: 20px;
+}
+
+// ====== color variants =======
+.art-badge-primary {
+  background-color: $primary-600;
+}
+.art-badge-danger {
+  background-color: $danger-500;
+}
+.art-badge-warning {
+  background-color: $warning-500;
+}
+.art-badge-success {
+  background-color: $success-500;
+}
+.art-badge-dark {
+  background-color: $neutral-500;
+}
+
+
+.art-badge-primary-light {
+  color: $primary-600;
+  background-color: $primary-100;
+}
+.art-badge-danger-light {
+  color: $danger-500;
+  background-color: $danger-100;
+}
+.art-badge-warning-light {
+  color: $warning-500;
+  background-color: $warning-100;
+}
+.art-badge-success-light {
+  color: $success-500;
+  background-color: $success-100;
+}
+.art-badge-dark-light {
+  color: $neutral-500;
+  background-color: $neutral-100;
+}

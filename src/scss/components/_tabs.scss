@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+
+.art-tab-header {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $neutral-150;
+  margin: 0;
+  padding: 0 1rem;
+}
+.art-tab-trigger {
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+.art-tab-trigger.active {
+  position: relative;
+  color: $primary-700;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $primary-700;
+    height: 1px;
+    width: 100%;
+    top: 100%;
+    left: 0;
+  }
+}
+
+.art-tab-panel {
+  display: none;
+  padding: 1rem;
+  background-color: $neutral-0;
+  border-radius: inherit;
+}
+
+.art-tab-panel.active {
+  display: block;
+}
+
+// shape variant
+.art-tab-group-basic {
+  border: 1px solid $neutral-150;
+  background-color: $neutral-0;
+}
+.art-tab-group-rounded {
+  @extend.art-tab-group-basic;
+  border-radius: 0.4rem;
+  .art-tab-panel {
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+  }
+}
+

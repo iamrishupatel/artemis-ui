@@ -1,0 +1,75 @@
+@use "../abstracts" as *;
+
+.art-drawer-container {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: $backdrop;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s all;
+}
+.art-drawer-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.art-drawer-header {
+  border-bottom: 1px solid $neutral-150;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  min-height: 4rem;
+}
+.art-drawer-content {
+  padding: 1rem;
+}
+// base drawer style
+.art-drawer {
+  position: absolute;
+  background-color: $neutral-0;
+  transition-delay: 0.4s;
+  transition: 0.2s all ease-in-out;
+}
+
+.art-drawer-left {
+  @extend .art-drawer;
+  height: 100%;
+  inset: 0;
+  transform: translateX(-100%);
+}
+.art-drawer-left.active {
+  transform: translateX(0);
+}
+
+.art-drawer-right {
+  @extend .art-drawer;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+.art-drawer-right.active {
+  transform: translateX(0);
+}
+
+.art-drawer-top {
+  @extend .art-drawer;
+  width: 100%;
+  transform: translateY(-100%);
+}
+.art-drawer-top.active {
+  transform: translateY(0);
+}
+
+.art-drawer-bottom {
+  @extend .art-drawer;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(100%);
+}
+.art-drawer-bottom.active {
+  transform: translateY(0);
+}

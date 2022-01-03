@@ -1,0 +1,75 @@
+@use "../abstracts" as *;
+.art-modal-container {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: $backdrop;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s all;
+}
+
+.art-modal-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.art-modal {
+  background-color: $neutral-0;
+  transition-delay: 0.4s;
+  transition: 0.2s all ease-in-out;
+  height: fit-content; 
+}
+.art-modal.active{
+  margin-top: 2rem;
+}
+
+.art-modal-rounded {
+  border-radius: 0.4rem;
+}
+
+.art-modal-header {
+  position: relative;
+  padding: 1rem;
+  border-bottom: 1px solid $neutral-150;
+  .art-modal-close {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 50%;
+    right: 0.6rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color : $neutral-500;
+    &:hover{
+      color : $neutral-900;
+    }
+  }
+}
+
+.art-modal-footer {
+  padding: 0 1rem;
+  padding-bottom: 0.6rem;
+}
+
+.art-modal-content {
+  padding: 0.6rem 1rem;
+}
+
+
+.art-modal-container.center{
+  align-items: center;
+  .art-modal{
+    transition: 0.2s all;
+    transform: translateY(-4rem);
+  }
+  .art-modal.active{
+    margin: 0;
+    transform: translateY(0);
+  }
+}
