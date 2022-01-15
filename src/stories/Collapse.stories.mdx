@@ -1,0 +1,187 @@
+import { Collapse, CollapseItem } from "../components/Collapse";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Collapse" component={Collapse} />
+
+# Collapse
+
+Collapse are collapsable blocks that vertically hide a stack of content.
+Clicking on the block reveals the associated content.
+
+- Can be used to group or hide complex regions to keep the page clean.
+- Use collapse for lower priority information.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Collapse)
+
+## Imports
+
+```js
+import { Collapse, CollapseItem } from "artemis-ui";
+```
+
+## Usage
+
+<Canvas style={{ background: "#f1f1f1" }}>
+  <Story name="default">
+    <Collapse>
+      <CollapseItem title="Collapse Item 1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+    </Collapse>
+  </Story>
+</Canvas>
+
+### Shape
+
+Use the shape prop to change the shape, you can set the value to `rounded`
+
+<Canvas style={{ background: "#f1f1f1" }}>
+  <Story name="shape">
+    <Collapse shape="rounded" type="border">
+      <CollapseItem title="Collapse Item 1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+    </Collapse>
+  </Story>
+</Canvas>
+
+### Types
+
+use `type` prop to change visual style of a collapse
+
+| Type          | Description                     |
+| ------------- | ------------------------------- |
+| border        | add borders to collapse item    |
+| margin        | add margin to collapse item.    |
+| basic         | basic collapse                  |
+| margin-border | collapse with margin and border |
+
+#### Border
+
+<Canvas style={{ background: "#f1f1f1" }}>
+  <Story name="type-border">
+    <Collapse type="border">
+      <CollapseItem title="Collapse Item 1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+    </Collapse>
+  </Story>
+</Canvas>
+
+#### Margin
+
+- give margin to collapse items
+- Make sure background is of different color than `collapse`
+
+<Canvas style={{ background: "#f1f1f1" }}>
+  <Story name="type-margin">
+    <Collapse type="margin">
+      <CollapseItem title="Collapse Item 1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+    </Collapse>
+  </Story>
+</Canvas>
+
+#### Border Margin
+
+- give margin and border to collapse items
+
+<Canvas style={{ background: "#f1f1f1" }}>
+  <Story name="type-border-margin" style={{ backgroundColor: "#f1f1f1" }}>
+    <Collapse type="border-margin">
+      <CollapseItem title="Collapse Item 1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+      <CollapseItem title="Collapse Item 3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+        numquam, ut laborum excepturi atque reiciendis cumque nostrum adipisci
+        perferendis? Unde voluptates nulla assumenda, nihil esse hic numquam
+        veniam asperiores recusandae.
+      </CollapseItem>
+    </Collapse>
+  </Story>
+</Canvas>
+
+## Props
+
+### Collapse
+
+<ArgsTable of={Collapse} />
+
+### CollapseItem
+
+| Name        | Description                | Default |
+| ----------- | -------------------------- | ------- |
+| **title\*** | title of the collapse Item | -       |

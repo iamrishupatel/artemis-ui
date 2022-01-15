@@ -1,0 +1,215 @@
+import { useState, Fragment } from "react";
+import { Modal } from "../components/Modal/Modal";
+import { Button } from "../components/Button/Button";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Modal" component={Modal} />
+
+# Modal
+
+Modal dialogs.
+
+When requiring users to interact with the application,
+but without jumping to a new page and interrupting the user's workflow,
+you can use `Modal` to create a new floating layer over the current page to get user feedback or display information.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Modal)
+
+## Imports
+
+```js
+import { Modal } from "artemis-ui";
+```
+
+## Usage
+
+Basic modal.
+
+<Canvas>
+  <Story name="base">
+    {() => {
+      const [isModalVisible, setIsModalVisible] = useState(false);
+      const showModal = () => {
+        setIsModalVisible(true);
+      };
+      const hideModal = () => {
+        setIsModalVisible(false);
+      };
+      return (
+        <Fragment>
+          <Modal visible={isModalVisible} onClose={hideModal}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam modi
+            illo, ut adipisci ducimus laboriosam. Omnis vel nesciunt perferendis
+            facere quod non unde dolor, sequi similique accusantium eveniet nisi
+            nam!
+          </Modal>
+          <Button variant="primary-light" onClick={showModal}>
+            Click me to show Modal
+          </Button>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Rounded Modal
+
+Use `shape` prop to change the shape the modal
+
+<Canvas>
+  <Story name="rounded">
+    {() => {
+      const [isModalVisible, setIsModalVisible] = useState(false);
+      const showModal = () => {
+        setIsModalVisible(true);
+      };
+      const hideModal = () => {
+        setIsModalVisible(false);
+      };
+      return (
+        <Fragment>
+          <Modal shape="rounded" visible={isModalVisible} onClose={hideModal}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam modi
+            illo, ut adipisci ducimus laboriosam. Omnis vel nesciunt perferendis
+            facere quod non unde dolor, sequi similique accusantium eveniet nisi
+            nam!
+          </Modal>
+          <Button variant="primary-light" onClick={showModal}>
+            Click me to show Modal
+          </Button>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Placement
+
+You can change the placement of the modal by changing the `placement` prop.
+The default `placement` is `topCenter`.
+
+<Canvas>
+  <Story name="placement">
+    {() => {
+      const [isModalVisible, setIsModalVisible] = useState(false);
+      const showModal = () => {
+        setIsModalVisible(true);
+      };
+      const hideModal = () => {
+        setIsModalVisible(false);
+      };
+      return (
+        <Fragment>
+          <Modal
+            placement="center"
+            visible={isModalVisible}
+            onClose={hideModal}
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam modi
+            illo, ut adipisci ducimus laboriosam. Omnis vel nesciunt perferendis
+            facere quod non unde dolor, sequi similique accusantium eveniet nisi
+            nam!
+          </Modal>
+          <Button variant="primary-light" onClick={showModal}>
+            Centered Modal
+          </Button>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Customizable Width
+
+Use `width` to set the width of the modal dialog.
+
+<Canvas>
+  <Story name="custom-width">
+    {() => {
+      const [isModalVisible, setIsModalVisible] = useState(false);
+      const showModal = () => {
+        setIsModalVisible(true);
+      };
+      const hideModal = () => {
+        setIsModalVisible(false);
+      };
+      return (
+        <Fragment>
+          <Modal
+            title="Modal with 300px width"
+            width="300px"
+            placement="center"
+            visible={isModalVisible}
+            onClose={hideModal}
+          >
+            <p>Small modal content....</p>
+            <p>Small modal content....</p>
+            <p>Small modal content....</p>
+          </Modal>
+          <Button variant="primary-light" onClick={showModal}>
+            300px
+          </Button>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Modal With Footer
+
+You can provide a custom `footer` component to render at the bottom of the modal
+Use `footer` to set the footer of the modal dialog.
+
+<Canvas>
+  <Story name="footer">
+    {() => {
+      const [isModalVisible, setIsModalVisible] = useState(false);
+      const showModal = () => {
+        setIsModalVisible(true);
+      };
+      const hideModal = () => {
+        setIsModalVisible(false);
+      };
+      return (
+        <Fragment>
+          <Modal
+            title="Modal with footer"
+            placement="center"
+            visible={isModalVisible}
+            onClose={hideModal}
+            footer={
+              <div
+                style={{
+                  display: "flex",
+                  gap: "1rem",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <Button variant="danger-light" size="sm" onClick={hideModal}>
+                  Cancel
+                </Button>
+                <Button variant="success" size="sm">
+                  Save
+                </Button>
+              </div>
+            }
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam modi
+            illo, ut adipisci ducimus laboriosam. Omnis vel nesciunt perferendis
+            facere quod non unde dolor, sequi similique accusantium eveniet nisi
+            nam!
+          </Modal>
+          <Button variant="primary-light" onClick={showModal}>
+            Click me to show Modal
+          </Button>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Modal} />

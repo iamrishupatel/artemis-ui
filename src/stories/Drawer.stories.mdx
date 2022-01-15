@@ -1,0 +1,121 @@
+import { useState } from "react";
+import { Drawer } from "../components/Drawer/Drawer";
+import { Button } from "../components/Button/Button";
+import { Option, Select } from "../components/FormComponents";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Drawer" component={Drawer} />
+
+# Drawer
+
+A panel which slides in from the edge of the screen.
+
+A Drawer is a panel that is typically overlaid on top of a page and slides in from the side.
+It contains a set of information or actions.
+Since the user can interact with the Drawer without leaving the current page,
+tasks can be achieved more efficiently within the same context.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Drawer)
+
+## Imports
+
+```js
+import { Drawer } from "artemis-ui";
+```
+
+## Usage
+
+a basic Drawer
+
+<Canvas>
+  <Story name="basic">
+    {() => {
+      const [isVisible, setIsVisible] = useState(false);
+      const hideDrawer = () => {
+        setIsVisible(false);
+      };
+      const showDrawer = () => {
+        setIsVisible(true);
+      };
+      return (
+        <Fragment>
+          <Button onClick={showDrawer} variant="primary" size="sm">
+            Open Drawer
+          </Button>
+          <Drawer
+            isVisible={isVisible}
+            onClose={hideDrawer}
+            header="Basic Header"
+          >
+            <p>Drawer Content.....</p>
+            <p>Drawer Content.....</p>
+            <p>Drawer Content.....</p>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sit
+              debitis obcaecati soluta architecto ullam in, sint accusantium
+              nemo itaque nihil sequi illo suscipit distinctio? Officiis
+              recusandae quod quam voluptatem eos iure?
+            </p>
+          </Drawer>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Placement
+
+You can change the position of the Drawer by using the `placement` prop
+
+- Select the drawer placement below.
+
+<Canvas style={{ background: "#f1f1f1" }}>
+  <Story name="placement">
+    {() => {
+      const [isVisible, setIsVisible] = useState(false);
+      const [drawerPlacement, setDrawerPlacement] = useState("right");
+      const hideDrawer = () => setIsVisible(false);
+      const showDrawer = () => setIsVisible(true);
+      const handleChange = e => setDrawerPlacement(e.target.value);
+      return (
+        <Fragment>
+          <Select
+            defaultValue="right"
+            onChange={handleChange}
+            style={{ margin: "1rem 0" }}
+          >
+            <Option value="top">Top</Option>
+            <Option value="bottom">Bottom</Option>
+            <Option value="left">Left</Option>
+            <Option value="right">Right</Option>
+          </Select>
+          <Button onClick={showDrawer} variant="primary" size="sm">
+            Open Drawer
+          </Button>
+          <Drawer
+            isVisible={isVisible}
+            onClose={hideDrawer}
+            header="Basic Header"
+            placement={drawerPlacement}
+          >
+            <p>Drawer Content.....</p>
+            <p>Drawer Content.....</p>
+            <p>Drawer Content.....</p>
+            <br />
+            <p onClick={handleChange}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sit
+              debitis obcaecati soluta architecto ullam in, sint accusantium
+              nemo itaque nihil sequi illo suscipit distinctio? Officiis
+              recusandae quod quam voluptatem eos iure?
+            </p>
+          </Drawer>
+        </Fragment>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Drawer} />

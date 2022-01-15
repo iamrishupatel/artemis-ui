@@ -1,0 +1,76 @@
+import { useState } from "react";
+import { QuantityPicker } from "../components/QuantityPicker/QuantityPicker";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/QuantityPicker" component={QuantityPicker} />
+
+# QuantityPicker
+
+A component that lets you pick a quantity of a product.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/QuantityPicker)
+
+## Imports
+
+```js
+import { QuantityPicker } from "artemis-ui";
+```
+
+## Usage
+
+a basic quantity picker
+
+<Canvas>
+  <Story name="basic">
+    {() => {
+      const [count, setCount] = useState(0);
+      const increment = () => {
+        setCount(prevCount => prevCount + 1);
+      };
+      const decrement = () => {
+        setCount(prevCount => prevCount - 1);
+      };
+      return (
+        <QuantityPicker
+          count={count}
+          onDecrease={decrement}
+          onIncrease={increment}
+          max={10}
+        />
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Rounded
+
+Use the `shape` prop to change the shape of `QuantityPicker`
+
+<Canvas>
+  <Story name="rounded">
+    {() => {
+      const [count, setCount] = useState(0);
+      const increment = () => {
+        setCount(prevCount => prevCount + 1);
+      };
+      const decrement = () => {
+        setCount(prevCount => prevCount - 1);
+      };
+      return (
+        <QuantityPicker
+          shape="rounded"
+          count={count}
+          onDecrease={decrement}
+          onIncrease={increment}
+          max={10}
+        />
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={QuantityPicker} />

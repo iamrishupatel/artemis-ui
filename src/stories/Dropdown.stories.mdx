@@ -1,0 +1,177 @@
+import {
+  DropDown,
+  DropDownItem,
+  SubDropDown,
+} from "../components/DropDown/DropDown";
+import { AiOutlineDown } from "react-icons/ai";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/DropDown" component={DropDown} />
+
+# DropDown
+
+When there are more than a few options to choose from, you can wrap them in a `Dropdown`.
+By hovering or clicking on the trigger, a dropdown menu will appear
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/DropDown)
+
+## Imports
+
+```js
+import { DropDown, DropDownItem } from "artemis-ui";
+```
+
+## Usage
+
+The most basic dropdown menu.
+
+<Canvas withSource="open">
+  <Story
+    name="base"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<DropDown 
+  label={
+    <div style={{display : "flex", alignItems : "center"}}>
+      Click Me <AiOutlineDown />
+    </div>
+    }
+>
+  <DropDownItem>Item 1</DropDownItem>
+  <DropDownItem>Item 2</DropDownItem>
+  <DropDownItem>Item 3 is a bit longer</DropDownItem>
+</DropDown>
+`,
+        },
+      },
+    }}
+  >
+    <div style={{ height: "10rem" }}>
+      <DropDown
+        label={
+          <div style={{ display: "flex", alignItems: "center" }}>
+            Click Me <AiOutlineDown />
+          </div>
+        }
+      >
+        <DropDownItem>Item 1</DropDownItem>
+        <DropDownItem>Item 2</DropDownItem>
+        <DropDownItem>Item 3 is a bit longer</DropDownItem>
+      </DropDown>
+    </div>
+  </Story>
+</Canvas>
+
+## On Hover
+
+The default trigger mode is `click`, you can change it to `hover` using `trigger` prop.
+
+<Canvas withSource="open">
+  <Story
+    name="hover"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<DropDown trigger="hover" label="Hover Me">
+  <DropDownItem>Item 1</DropDownItem>
+  <DropDownItem>Item 2</DropDownItem>
+  <DropDownItem>Item 3 is a bit longer</DropDownItem>
+</DropDown>
+`,
+        },
+      },
+    }}
+  >
+    <div style={{ height: "10rem" }}>
+      <DropDown trigger="hover" label="Hover Me">
+        <DropDownItem>Item 1</DropDownItem>
+        <DropDownItem>Item 2</DropDownItem>
+        <DropDownItem>Item 3 is a bit longer</DropDownItem>
+      </DropDown>
+    </div>
+  </Story>
+</Canvas>
+
+## Rounded
+
+The default shape of dropdown is rectangular, you can change it to `rounded`.
+
+<Canvas withSource="open">
+  <Story
+    name="rounded"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<DropDown  shape="rounded" label="Hover Me">
+  <DropDownItem>Item 1</DropDownItem>
+  <DropDownItem>Item 2</DropDownItem>
+  <DropDownItem>Item 3 is a bit longer</DropDownItem>
+</DropDown>
+`,
+        },
+      },
+    }}
+  >
+    <div style={{ height: "10rem" }}>
+      <DropDown shape="rounded" label="Click Me">
+        <DropDownItem>Item 1</DropDownItem>
+        <DropDownItem>Item 2</DropDownItem>
+        <DropDownItem>Item 3 is a bit longer</DropDownItem>
+      </DropDown>
+    </div>
+  </Story>
+</Canvas>
+
+## Nested DropDown
+
+- nested dropdown has multiple levels.
+- use only hover trigger on `SubDropDown`. This issue will be fixed in the future.
+
+<Canvas>
+  <Story
+    name="nested"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<DropDown shape="rounded" label="Click Me">
+  <DropDownItem>Item 1</DropDownItem>
+  <DropDownItem>Item 2 is a bit longer</DropDownItem>
+  <SubDropDown label="nested dropdown >>">
+    <DropDownItem>Item A </DropDownItem>
+    <DropDownItem>Item B </DropDownItem>
+  </SubDropDown>
+</DropDown>
+`,
+        },
+      },
+    }}
+  >
+    <div style={{ height: "15rem" }}>
+      <DropDown shape="rounded" label="Click Me">
+        <DropDownItem>Item 1</DropDownItem>
+        <DropDownItem>Item 2 is a bit longer</DropDownItem>
+        <SubDropDown label="nested dropdown >>">
+          <DropDownItem>Item A </DropDownItem>
+          <DropDownItem>Item B </DropDownItem>
+        </SubDropDown>
+      </DropDown>
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+#### DropDown Props
+
+<ArgsTable of={DropDown} />
+
+#### SubDropDown Props
+
+<ArgsTable of={SubDropDown} />

@@ -1,0 +1,118 @@
+import { TabGroup, Tabs, Tab, TabPanel, TabPanels } from "../components/Tabs";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Tabs" component={Tabs} />
+
+# Tabs
+
+Tabs make it easy to switch between different views.
+
+Best Practices
+
+- Tabs label should be concise. One word or two maximum is preferable.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Tabs)
+
+## Imports
+
+```js
+import { TabGroup, Tabs, Tab, TabPanels, TabPanel } from "artemis-ui";
+```
+
+## Usage
+
+Tabs allow to classify related content in different views within a same page.
+
+<Canvas>
+  <Story name="base">
+    <TabGroup>
+      <Tabs>
+        <Tab>Tab 01</Tab>
+        <Tab>Tab 02</Tab>
+        <Tab>Tab 03</Tab>
+      </Tabs>
+      <TabPanels>
+        <TabPanel>
+          <h3>TAB 01 Content</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            facilis eius commodi, animi saepe obcaecati architecto eveniet nam
+            eaque, blanditiis magni ea iure velit aperiam iusto laudantium
+            recusandae maiores dolorem.
+          </p>
+        </TabPanel>
+        <TabPanel>
+          <h3>TAB 02 Content</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            facilis eius commodi, animi saepe obcaecati architecto eveniet nam
+            eaque, blanditiis magni ea iure velit aperiam iusto laudantium
+            recusandae maiores dolorem.
+          </p>
+        </TabPanel>
+        <TabPanel>
+          <h3>TAB 03 Content</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            facilis eius commodi, animi saepe obcaecati architecto eveniet nam
+            eaque, blanditiis magni ea iure velit aperiam iusto laudantium
+            recusandae maiores dolorem.
+          </p>
+        </TabPanel>
+      </TabPanels>
+    </TabGroup>
+  </Story>
+</Canvas>
+
+### Rounded
+
+make tab component rounded
+
+<Canvas>
+  <Story name="rounded">
+    <TabGroup shape="rounded">
+      <Tabs>
+        <Tab>Tab 01</Tab>
+        <Tab>Tab 02</Tab>
+        <Tab>Tab 03</Tab>
+      </Tabs>
+      <TabPanels>
+        <TabPanel>
+          <h3>TAB 01 Content</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            facilis eius commodi, animi saepe obcaecati architecto eveniet nam
+            eaque, blanditiis magni ea iure velit aperiam iusto laudantium
+            recusandae maiores dolorem.
+          </p>
+        </TabPanel>
+        <TabPanel>
+          <h3>TAB 02 Content</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            facilis eius commodi, animi saepe obcaecati architecto eveniet nam
+            eaque, blanditiis magni ea iure velit aperiam iusto laudantium
+            recusandae maiores dolorem.
+          </p>
+        </TabPanel>
+        <TabPanel>
+          <h3>TAB 03 Content</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            facilis eius commodi, animi saepe obcaecati architecto eveniet nam
+            eaque, blanditiis magni ea iure velit aperiam iusto laudantium
+            recusandae maiores dolorem.
+          </p>
+        </TabPanel>
+      </TabPanels>
+    </TabGroup>
+  </Story>
+</Canvas>
+
+## Props
+
+### TabGroup
+
+<ArgsTable of={TabGroup} />

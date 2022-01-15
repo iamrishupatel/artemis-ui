@@ -1,0 +1,106 @@
+import { TextArea } from "../components/FormComponents";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/TextArea" component={TextArea} />
+
+# TextArea
+
+A basic component for getting more than one line as input
+
+Best Practices
+
+- Labels should be clear and concise.
+- Make sure to use the placeholder feature whenever clarification are helpful on how to use the TextArea.
+- Make sure to use to define the TextArea as required whenever it is absolutely mandatory.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/FormComponents)
+
+## Imports
+
+```js
+import { TextArea } from "artemis-ui";
+```
+
+## Usage
+
+TextAreas are always found in forms. They give users the possibility to add or edit multiline text.
+
+<Canvas withSource="open">
+  <Story name="base">
+    <TextArea type="text" placeholder="Enter Something" label="Label" />
+  </Story>
+</Canvas>
+
+### Rounded
+
+<Canvas withSource="open">
+  <Story name="rounded">
+    <TextArea
+      shape="rounded"
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### Error TextArea
+
+TextAreas can display errors. The error message is customizable and is shown below the writing area.
+
+<Canvas withSource="open">
+  <Story name="error">
+    <TextArea
+      error="This is a error statement"
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### Success TextArea
+
+TextAreas can display success messages. The success message is customizable and is shown below the writing area.
+
+<Canvas withSource="open">
+  <Story name="success">
+    <TextArea
+      success="This is a success statement"
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### Disabled TextArea
+
+Depending on the permissions a user have or the status of an action, an TextArea can be unreachable or unavailable yet.
+
+<Canvas withSource="open">
+  <Story name="disabled">
+    <TextArea
+      disabled
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### Without Label
+
+TextAreas can be used without a label.
+
+<Canvas withSource="open">
+  <Story name="without-label">
+    <TextArea type="text" placeholder="Enter Something" />
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={TextArea} />

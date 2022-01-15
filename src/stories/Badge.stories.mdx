@@ -1,0 +1,133 @@
+import { Badge } from "../components/Badge/Badge";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+import { AiFillTool } from "react-icons/ai";
+
+<Meta title="Design System/Badge" component={Badge} />
+
+# Badge
+
+Badges are used to give a quick visual indication to the users.
+
+Best practices
+
+- Use them next to a label or a description.
+- Badge component should be filled only with numbers or a single word max.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Badge)
+
+## Imports
+
+```js
+import { Badge } from "artemis-ui";
+```
+
+
+## Usage
+
+<Canvas withSource="open">
+  <Story name="default">
+    <Badge>Default</Badge>
+  </Story>
+</Canvas>
+
+### With Icon
+
+An icon can be added to badge using `icon` prop to give more impact
+
+<Canvas withSource="open">
+  <Story name="with-icon">
+    <Badge icon={<AiFillTool />}>with-icon</Badge>
+  </Story>
+</Canvas>
+
+### Sizes
+
+Badge comes in three sizes.
+By default they are of **_medium_** size
+
+Use the `size` prop to change the size of the `Badge`.
+You can set the value to `sm`, `md`, `lg`
+
+<Canvas withSource="open">
+  <Story
+    name="sizes"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Badge size="sm">small</Badge>
+<Badge size="md">medium</Badge>
+<Badge size="lg">large</Badge>
+`,
+        },
+      },
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        gap: "1rem",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      <Badge size="sm">small</Badge>
+      <Badge size="md">medium</Badge>
+      <Badge size="lg">large</Badge>
+    </div>
+  </Story>
+</Canvas>
+
+### Variants
+
+Use the variant prop to change the visual style of the `Badge`.
+
+<Canvas withSource="open">
+  <Story
+    name="variants"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Badge variant="primary">primary</Badge>
+<Badge variant="danger">danger</Badge>
+<Badge variant="warning">warning</Badge>
+<Badge variant="success">success</Badge>
+<Badge variant="dark">dark</Badge>
+<Badge variant="primary-light">primary-light</Badge>
+<Badge variant="danger-light">danger-light</Badge>
+<Badge variant="warning-light">warning-light</Badge>
+<Badge variant="success-light">success-light</Badge>
+<Badge variant="dark-light">dark-light</Badge>
+`,
+        },
+      },
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        gap: "1rem",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      <Badge variant="primary">primary</Badge>
+      <Badge variant="danger">danger</Badge>
+      <Badge variant="warning">warning</Badge>
+      <Badge variant="success">success</Badge>
+      <Badge variant="dark">dark</Badge>
+      <Badge variant="primary-light">primary-light</Badge>
+      <Badge variant="danger-light">danger-light</Badge>
+      <Badge variant="warning-light">warning-light</Badge>
+      <Badge variant="success-light">success-light</Badge>
+      <Badge variant="dark-light">dark-light</Badge>
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Badge} />

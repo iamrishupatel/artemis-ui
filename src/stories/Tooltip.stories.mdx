@@ -1,0 +1,142 @@
+import { Tooltip } from "../components/Tooltip/Tooltip";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Tootltip" component={Tooltip} />
+
+# Tootltip
+
+Tooltips are floating labels that display additional information upon hover of an element.
+
+- The tooltip should not be used to provide critical or urgent information.
+- Tooltips should be used sparingly.
+- We have a max-width of 150px
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Tooltip)
+
+## Imports
+
+```js
+import { Tooltip } from "artemis-ui";
+```
+
+## Usage
+
+Tooltips are used to show the full version of truncated text or is a way to display further information about an element. The tooltip will appear on top of adjacent text.
+
+<Canvas withSource="open">
+  <Story name="base">
+    <div>
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        excepturi at sunt eum magni iste reprehenderit rem rerum dolorum sit
+        alias accusamus, illo, minus aperiam hic error qui asperiores quam?
+      </span>
+      <Tooltip message="I'm a tooltip">
+        <strong>Hover ME</strong>
+      </Tooltip>
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        excepturi at sunt eum magni iste reprehenderit rem rerum dolorum sit
+        alias accusamus, illo, minus aperiam hic error qui asperiores quam?
+      </span>
+    </div>
+  </Story>
+</Canvas>
+
+### Placements
+
+You can change the placement of the tooltip by changing the `placement` prop. The default `placement` is top.
+
+<Canvas withSource="open">
+  <Story
+    name="placement"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Tooltip placement="top" message="I'm a tooltip" >Top</Tooltip>
+<Tooltip placement="bottom" message="I'm a tooltip" >Bottom</Tooltip>
+<Tooltip placement="left" message="I'm a tooltip" >Left</Tooltip>
+<Tooltip placement="right" message="I'm a tooltip" >Right</Tooltip>        
+`,
+        },
+      },
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        gap: "4rem",
+        alignItems: "center",
+        flexWrap: "wrap",
+        padding: "4rem",
+      }}
+    >
+      <Tooltip placement="top" message="I'm a tooltip">
+        Top
+      </Tooltip>
+      <Tooltip placement="bottom" message="I'm a tooltip">
+        Bottom
+      </Tooltip>
+      <Tooltip placement="left" message="I'm a tooltip">
+        Left
+      </Tooltip>
+      <Tooltip placement="right" message="I'm a tooltip">
+        Right
+      </Tooltip>
+    </div>
+  </Story>
+</Canvas>
+
+### Custom Color
+
+you can provide _hex_, _rgba_ or _hsla_ value string in `color` prop to change color of tooltip.
+
+<Canvas withSource="open">
+  <Story
+    name="custom-color"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Tooltip color="#c22b2b" message="I'm a tooltip">
+  HEX
+</Tooltip>
+<Tooltip color="rgba(8, 67, 241, 1)" message="I'm a tooltip">
+  RGBA
+</Tooltip>
+<Tooltip color="hsla(121, 94%, 49%, 1)" message="I'm a tooltip">
+  HSLA
+</Tooltip>       
+`,
+        },
+      },
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        gap: "4rem",
+        alignItems: "center",
+        flexWrap: "wrap",
+        padding: "4rem",
+      }}
+    >
+      <Tooltip color="#c22b2b" message="I'm a tooltip">
+        HEX
+      </Tooltip>
+      <Tooltip color="rgba(8, 67, 241, 1)" message="I'm a tooltip">
+        RGBA
+      </Tooltip>
+      <Tooltip color="hsla(121, 94%, 49%, 1)" message="I'm a tooltip">
+        HSLA
+      </Tooltip>
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Tooltip} />

@@ -1,0 +1,48 @@
+import { Rate } from "../components/Rate/Rate";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Rate" component={Rate} />
+
+# Rate
+
+Rate component.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Rate)
+
+## Imports
+
+```js
+import { Rate } from "artemis-ui";
+```
+
+## Usage
+
+<Canvas withSource="open">
+  <Story name="base">
+    <Rate value={4} />
+  </Story>
+</Canvas>
+
+### Custom Color
+
+provide a string of _hex_, _rgbs_ or _hsl_ in `color` prop to change color.
+
+<Canvas withSource="open">
+  <Story name="custom-color">
+    <Rate color="rgba(51, 244, 11, 1)" value={4} />
+  </Story>
+</Canvas>
+
+### More Stars
+
+<Canvas withSource="open">
+  <Story name="more-stars">
+    <Rate value={7} max={10} />
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Rate} />

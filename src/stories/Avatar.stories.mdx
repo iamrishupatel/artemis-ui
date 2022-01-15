@@ -1,0 +1,102 @@
+
+import { Avatar } from "../components/Avatar/Avatar";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Avatar" component={Avatar} />
+
+# Avatar
+
+Avatars can be used to represent people or objects. It supports images or letters.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/Avatar)
+
+## Imports
+
+```js
+import { Avatar } from "artemis-ui";
+```
+
+## Usage
+
+<Canvas withSource="open">
+  <Story name="default">
+    <Avatar />
+  </Story>
+</Canvas>
+
+### Circular
+
+<Canvas withSource="open">
+  <Story name="shape">
+    <Avatar shape="circle" />
+  </Story>
+</Canvas>
+
+### With Image
+
+Use the `src` prop to add image
+
+<Canvas withSource="open">
+  <Story name="with-image">
+    <Avatar
+      shape="circle"
+      src="https://images.pexels.com/photos/2380794/pexels-photo-2380794.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    />
+  </Story>
+</Canvas>
+
+### Custom Text
+
+<Canvas withSource="open">
+  <Story name="custom-text">
+    <Avatar text="JD" />
+  </Story>
+</Canvas>
+
+### Custom Color
+
+provide a string of _hex_, _rgb_, _hsla_ in `color` prop to change color
+
+<Canvas withSource="open">
+  <Story name="custom-color">
+    <Avatar shape="circle" color="#1f35fa" />
+  </Story>
+</Canvas>
+
+### Sizes
+
+<Canvas withSource="open">
+  <Story
+    name="sizes"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Avatar size="sm" />
+<Avatar size="md" />
+<Avatar size="lg" />
+`,
+        },
+      },
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        gap: "1rem",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      <Avatar size="sm" />
+      <Avatar size="md" />
+      <Avatar size="lg" />
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Avatar} />

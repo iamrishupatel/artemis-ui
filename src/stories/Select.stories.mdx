@@ -1,0 +1,105 @@
+import { Option, Select } from "../components/FormComponents";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Design System/Select" component={Select} />
+
+# Select
+
+Select component to select value from options.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/FormComponents)
+
+## Imports
+
+```js
+import { Option, Select } from "artemis-ui";
+```
+
+## Usage
+
+<Canvas withSource="open">
+  <Story name="default">
+    <Select defaultValue="select">
+      <Option value="select" disabled>
+        Select
+      </Option>
+      <Option value="it1">Item 1</Option>
+      <Option value="it2">Item 2</Option>
+      <Option value="it3">Item 3</Option>
+      <Option value="it4">Item 4</Option>
+    </Select>
+  </Story>
+</Canvas>
+
+## With Errors
+
+Select can display errors. The error message is customizable and is shown below the writing area.
+
+<Canvas withSource="open">
+  <Story name="errors">
+    <Select defaultValue="select" error="this is an error">
+      <Option value="select" disabled>
+        Select
+      </Option>
+      <Option value="it1">Item 1</Option>
+      <Option value="it2">Item 2</Option>
+      <Option value="it3">Item 3</Option>
+      <Option value="it4">Item 4</Option>
+    </Select>
+  </Story>
+</Canvas>
+
+## With Success
+
+Select can display success messages. The success message is customizable and is shown below the writing area.
+
+<Canvas withSource="open">
+  <Story name="success">
+    <Select defaultValue="select" success="this is a success message">
+      <Option value="select" disabled>
+        Select
+      </Option>
+      <Option value="it1">Item 1</Option>
+      <Option value="it2">Item 2</Option>
+      <Option value="it3">Item 3</Option>
+      <Option value="it4">Item 4</Option>
+    </Select>
+  </Story>
+</Canvas>
+
+## With Disabled
+
+Depending on the permissions a user have or the status of an action, an Select can be unreachable or unavailable yet.
+
+<Canvas withSource="open">
+  <Story
+    name="disabled"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Select defaultValue="select" disabled>
+  // put options here...
+</Select>
+`,
+        },
+      },
+    }}
+  >
+    <Select defaultValue="select" disabled>
+      <Option value="select" disabled>
+        Select
+      </Option>
+      <Option value="it1">Item 1</Option>
+      <Option value="it2">Item 2</Option>
+    </Select>
+  </Story>
+</Canvas>
+
+## Props
+
+### Select
+
+<ArgsTable of={Select} />

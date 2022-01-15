@@ -1,0 +1,179 @@
+import { Input } from "../components/FormComponents";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+import { AiOutlineEye, AiOutlineLock, AiOutlineMail } from "react-icons/ai";
+
+<Meta title="Design System/Input" component={Input} />
+
+# Input
+
+A basic component for getting the user input. Keyboard and mouse can be used for providing or changing data.
+
+Best Practices
+
+- Labels should be clear and concise.
+- Make sure to use the placeholder feature whenever clarification are helpful on how to use the input.
+- Make sure to use to define the input as required whenever it is absolutely mandatory.
+- If a single line is not enough for the amount of text required, use `TextArea` component.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/iamrishupatel/artemis-ui/tree/main/src/components/FormComponents)
+
+## Imports
+
+```js
+import { Input } from "artemis-ui";
+```
+
+## Usage
+
+Inputs are always found in forms. They give users the possibility to add or edit text.
+
+<Canvas withSource="open">
+  <Story name="default">
+    <Input type="text" placeholder="Enter Something" label="Label" />
+  </Story>
+</Canvas>
+
+### Rounded
+
+<Canvas withSource="open">
+  <Story name="rounded">
+    <Input
+      shape="rounded"
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### With Icons
+
+Input can have icons
+
+Use the `leftIcon` and `rightIcon` props to add icons
+
+<Canvas withSource="open">
+  <Story
+    name="with-icons"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+<Input
+  leftIcon={<AiOutlineMail />}
+  type="password"
+  placeholder="Enter Something"
+  label="Left Icon"
+/>
+<Input
+  rightIcon={<AiOutlineEye />}
+  type="password"
+  placeholder="Enter Something"
+  label="Right Icon"
+/>
+<Input
+  leftIcon={<AiOutlineMail />}
+  rightIcon={<AiOutlineEye />}
+  type="password"
+  placeholder="Enter Something"
+  label="Icon on both sides"
+/>
+`,
+        },
+      },
+    }}
+  >
+    <div
+      style={{
+        display: "grid",
+        gridGap: "1rem",
+      }}
+    >
+      <Input
+        leftIcon={<AiOutlineMail />}
+        type="password"
+        placeholder="Enter Something"
+        label="Left Icon"
+      />
+      <Input
+        rightIcon={<AiOutlineEye />}
+        type="password"
+        placeholder="Enter Something"
+        label="Right Icon"
+      />
+      <Input
+        leftIcon={<AiOutlineMail />}
+        rightIcon={<AiOutlineEye />}
+        type="password"
+        placeholder="Enter Something"
+        label="Icon on both sides"
+      />
+    </div>
+  </Story>
+</Canvas>
+
+### Error Input
+
+Inputs can display errors. The error message is customizable and is shown below the writing area.
+
+<Canvas withSource="open">
+  <Story name="error">
+    <Input
+      error="This is a error statement"
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### Success Input
+
+Inputs can display success messages. The success message is customizable and is shown below the writing area.
+
+<Canvas withSource="open">
+  <Story name="success">
+    <Input
+      success="This is a success statement"
+      type="text"
+      placeholder="Enter Something"
+      label="Label"
+    />
+  </Story>
+</Canvas>
+
+### Disabled Input
+
+Depending on the permissions a user have or the status of an action, an Input can be unreachable or unavailable yet.
+
+<Canvas withSource="open">
+  <Story name="disabled">
+    <Input disabled type="text" placeholder="Enter Something" label="Label" />
+  </Story>
+</Canvas>
+
+### Password Input
+
+Pass on the `type` prop to change the input type
+
+<Canvas withSource="open">
+  <Story name="password">
+    <Input type="password" placeholder="Enter Password" label="Password" />
+  </Story>
+</Canvas>
+
+### Without Label
+
+Inputs can be used without a label.
+
+<Canvas withSource="open">
+  <Story name="without-label">
+    <Input type="text" placeholder="Enter Something" />
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Input} />
