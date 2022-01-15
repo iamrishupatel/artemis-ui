@@ -2,8 +2,11 @@ import React, { ReactChild } from "react";
 
 export interface SelectProps extends React.HTMLProps<HTMLSelectElement> {
   children: ReactChild | ReactChild[];
+  /** Error description of the select */
   error?: string;
+  /** Success description of the select */
   success?: string;
+  /** Disabled state of the select */
   disabled?: boolean;
 }
 

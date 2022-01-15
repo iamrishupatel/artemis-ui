@@ -1,15 +1,24 @@
-import React, {  ReactChild, ReactElement, ReactNode, useState } from "react";
+import React, { ReactChild, ReactElement, ReactNode, useState } from "react";
 
 export interface DropDownProps {
+  /** Item on which on dropdown is placed*/
   label: ReactNode;
   children: ReactElement<DropDownItemProps> | ReactElement<DropDownItemProps>[];
+  /** Shape of the dropdown container */
   shape?: "rounded" | "default";
+  /**The trigger mode which executes the dropdown action.
+   *  Note that hover can't be used on touchscreens
+   */
   trigger?: "click" | "hover";
 }
 
 export interface SubDropDownProps {
+  /** Item on which on sub-dropdown is placed*/
   label: ReactNode;
   children: ReactElement<DropDownItemProps> | ReactElement<DropDownItemProps>[];
+  /**The trigger mode which executes the dropdown action.
+   *  Note that hover can't be used on touchscreens
+   */
   trigger?: "click" | "hover";
 }
 

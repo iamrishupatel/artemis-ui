@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
+  /** Variant of the button for visual styling */
   variant?:
     | "primary"
     | "primary-light"
@@ -9,8 +10,11 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     | "danger-light"
     | "success"
     | "success-light";
+  /** Shape of the button */
   shape?: "rounded" | "circle";
+  /** Size of the button */
   size?: "lg" | "md" | "sm";
+  /** Disabled state of button */
   disabled?: boolean;
 }
 

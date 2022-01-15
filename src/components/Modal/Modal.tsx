@@ -2,13 +2,22 @@ import React, { FC, ReactChild, MouseEvent } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 export interface ModalProps {
+  /** Width of the modal */
   width?: string;
+  /**Whether the modal dialog is visible or not */
   visible: boolean;
   children: ReactChild | ReactChild[];
+  /** Specify a callback that will be called
+   *  when a user clicks mask(backdrop),
+   */
   onClose: () => void;
+  /** Footer element for the modal */
   footer?: ReactChild;
+  /** The title of the modal */
   title: string;
+  /** The shape of the modal */
   shape?: "rounded" | "basic";
+  /** The placement of the modal */
   placement?: "topCenter" | "center";
 }
 

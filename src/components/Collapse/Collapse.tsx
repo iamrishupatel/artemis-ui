@@ -1,7 +1,9 @@
 import React, { Children, cloneElement, ReactChild, ReactElement } from "react";
 
 export interface CollapseProps {
+  /** Type of collapse items */
   type?: "margin" | "border" | "basic" | "border-margin";
+  /** Shape of the collapse items */
   shape?: "rounded" | "basic";
   children: ReactChild | ReactChild[] | ReactElement[];
 }

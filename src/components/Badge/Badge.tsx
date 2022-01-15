@@ -2,8 +2,11 @@ import React, { FC, ReactChild } from "react";
 
 export interface BadgeProps {
   children: ReactChild;
+  /** Icon component of the badge */
   icon?: ReactChild;
+  /** Size of the badge */
   size?: "sm" | "md" | "lg";
+  /** Variant of the badge for visual styling */
   variant:
     | "primary"
     | "danger"

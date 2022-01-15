@@ -2,6 +2,7 @@ import React, { FC, ReactChild, ReactElement, useState } from "react";
 import { TabsContext } from "./TabContext";
 
 export interface TabGroupProps {
+  /** Shape of the tabs */
   shape?: "basic" | "rounded";
   children: ReactChild | ReactChild[];
 }

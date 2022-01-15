@@ -1,12 +1,20 @@
 import React, { FC, ReactChild, MouseEvent } from "react";
 
 export interface DrawerProps {
+  /** Header element for the drawer  */
   header?: ReactChild;
+  /**Whether the Drawer dialog is visible or not */
   isVisible: boolean;
+  /** Specify a callback that will be called
+   *  when a user clicks mask(backdrop),
+   */
   onClose: () => void;
   children: ReactChild | ReactChild[];
+  /* Width of the drawer when placement is `top` or `bottom` */
   width?: string;
+  /* Height of the drawer when placement is `top` or `bottom` */
   height?: string;
+  /** The placement of the drawer */
   placement?: "left" | "right" | "top" | "bottom";
 }
 

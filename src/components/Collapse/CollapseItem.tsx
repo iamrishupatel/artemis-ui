@@ -2,6 +2,7 @@ import React, { ReactChild, useState } from "react";
 import { AiOutlineCaretDown } from "react-icons/ai";
 
 export interface CollapseItemProps {
+  /** Title of the collapse item or panel */
   title: string;
   shape?: "rounded" | "basic";
   type?: "margin" | "border" | "basic" | "border-margin";

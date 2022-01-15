@@ -2,8 +2,11 @@ import React, { FC, ReactChild, useState } from "react";
 
 export interface TooltipProps {
   children: ReactChild;
+  /** Message of tooltip that will be shown on hover */
   message: string;
+  /** Placement of tooltip */
   placement: "top" | "bottom" | "left" | "right";
+  /** Color of the tooltip */
   color?: string;
 }
 

@@ -1,14 +1,21 @@
 import React, { ReactNode, useState } from "react";
-import { IconType } from "react-icons/lib";
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
+  /** Label of the input */
   label?: string;
+  /** Error description of the input */
   error?: string;
+  /** Success description of the input */
   success?: string;
+  /** The type of input */
   type: "number" | "password" | "text" | "email";
+  /** The shape of input */
   shape?: "rounded" | "basic";
+  /** Left icon component of the badge */
   leftIcon?: ReactNode;
+  /** Right icon component of the badge */
   rightIcon?: ReactNode;
+  /** Disabled state of the input */
   disabled?: boolean;
 }
 

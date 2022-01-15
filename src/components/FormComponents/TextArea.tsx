@@ -1,12 +1,19 @@
 import React, { FC, HTMLProps } from "react";
 
 export interface TextaAreaProps extends HTMLProps<HTMLTextAreaElement> {
+  /** Label of the textarea */
   label?: string;
+  /** Error description of the textarea */
   error?: string;
+  /** The type of textarea */
   success?: string;
+  /** Disabled state of the textarea */
   disabled?: boolean;
+  /** Height of the textarea */
   height?: string;
+  /** Width of the textarea */
   width?: string;
+  /** The shape of textarea */
   shape?: "rounded" | "basic";
 }
 

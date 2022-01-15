@@ -3,8 +3,11 @@ import React, { FC } from "react";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 export interface RateProps {
+  /** Current rating*/
   value: number;
+  /** Maximum number of stars */
   max?: number;
+  /** Color of the stars */
   color?: string;
 }
 
