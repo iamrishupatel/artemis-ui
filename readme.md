@@ -6,10 +6,18 @@ Artemis UI is a react components library build with [StoryBook](https://storyboo
 
 Docs and Demo can be found [here](https://artemisui.netlify.app/?path=/docs)
 
-## Install and use this library 
+## How to use this library
+
+### Installation
 
 ```
 npm i artemis-ui
+```
+
+### Import the styles for components
+
+```
+import "artemis-ui/dist/index.css"
 ```
 
 ## Components to add in the future
